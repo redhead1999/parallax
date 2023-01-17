@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parallax</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<header>
+		<a href="#" class="logo">Logo</a>
+			<ul>
+				<li><a href="#" class="active">Главная</a></li>
+				<li><a href="#">О нас</a></li>
+				<li><a href="#">Портфолио</a></li>
+				<li><a href="#">Контакты</a></li>
+			</ul>
+	</header>
+
+	<section>
+		<img src="assets/stars.png" id="stars">
+		<img src="assets/moon.png" id="moon">
+		<img src="assets/mountains_behind.png" id="mountains_behind">
+		<h2 id="text">Привет, Мир!</h2>
+		<a href="#sec" id="btn">Поехали!</a>
+		<img src="assets/mountains_front.png" id="mountains_front">
+	</section>
+	<div class="sec" id="sec">
+		<h2>Параллакс Эффект</h2>
+		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi harum ducimus adipisci voluptatibus labore quisquam explicabo rem quas! Blanditiis id non minus cum quam. Quisquam tempora accusamus in velit natus delectus labore libero voluptate minus temporibus provident sapiente officiis doloremque eos pariatur dicta iste, id perferendis. <br><br>Obcaecati facere eligendi maxime aperiam quas fuga laborum unde neque nihil, minima beatae ratione porro quidem voluptas repudiandae praesentium ducimus incidunt distinctio provident veniam deleniti et tenetur at. Voluptatum atque saepe ipsum velit, laborum hic earum eius adipisci totam fugiat ad impedit fugit, praesentium dolorem expedita tenetur, ipsam esse odit facere excepturi. <br><br>Facilis cupiditate nulla, aliquam accusantium consectetur assumenda nesciunt quos pariatur veritatis vero repellendus sapiente beatae optio exercitationem. Labore saepe illum adipisci nobis.</p>
+	</div>
+
+	<script>
+		let stars = document.getElementById('stars'); 
+		let moon = document.getElementById('moon'); 
+		let mountains_behind = document.getElementById('mountains_behind'); 
+		let mountains_front = document.getElementById('mountains_front'); 
+		let text = document.getElementById('text');
+		let btn = document.getElementById('btn');
+		let header = document.querySelector('header');
+
+		window.addEventListener('scroll', function(){
+			let value = window.scrollY;
+			stars.style.left = value * 0.25 + 'px';
+			moon.style.top = value * 1.05 + 'px';
+			mountains_behind.style.top = value * 0.5 +'px';
+			mountains_front.style.top = value * 0 + 'px';
+			text.style.marginRight = value * 4 + 'px';
+			text.style.marginTop = value * 1.5 + 'px';
+			btn.style.marginTop = value * 1.5 +'px';
+			header.style.top = value * 0.5 +'px';
+		});
+	</script>
+
+</body>
+</html>
